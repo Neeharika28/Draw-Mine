@@ -57,8 +57,8 @@ if (keyPressed=="37") {
 }
 
 if (keyPressed=="38") {
-    console.log("top");
-    top();
+    console.log("up");
+    up();
 }
 
 if (keyPressed=="39") {
@@ -67,8 +67,8 @@ if (keyPressed=="39") {
 }
 
 if (keyPressed=="40") {
-    console.log("bottom");
-    bottom();
+    console.log("down");
+    down();
 }
 
 if (keyPressed=="87") {
@@ -118,3 +118,42 @@ if (keyPressed=="67") {
 
 }
 
+function up(){
+    if (player_y >0) {
+        player_y=player_y - block_img_height;
+        console.log("block_img_height "+block_img_height);
+        console.log("player_x "+player_x + " player_y "+player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function down(){
+    if (player_y<=500) {
+       player_y=player_y+block_img_height;
+       console.log("block_img_height "+block_img_height);
+       console.log("player_x "+player_x +" player_y "+player_y);
+       canvas.remove(player_object);
+       player_update();
+    }
+}
+
+function right(){
+    if (player_x<850) {
+    player_x=player_x+block_img_width;
+    console.log("block_img_width "+block_img_width);
+    console.log("player_x "+player_x+" player_y "+player_y);
+    canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function left(){
+    if (player_x>0) {
+        player_x=player_x-block_img_width;
+        console.log("block_img_width "+block_img_width);
+        console.log("player_x "+player_x+" player_y "+player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
